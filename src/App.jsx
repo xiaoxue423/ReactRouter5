@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { NavLink, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from "./Pages/Home";//路由组件
 import About from "./Pages/About";//路由组件
-import Header from "./components/Header";
-import MyNavLink from "./components/MyNavLink";
+import Demo from './Pages/Demo' //路由组件
+
+import Header from "./components/Header"; //一般组件
+import MyNavLink from "./components/MyNavLink"; //一般组件
 
 export default class App extends Component {
   render() {
@@ -30,8 +32,12 @@ export default class App extends Component {
             <div className="panel">
               <div className="panel-body">
                 {/* 注册路由 */}
+                <Switch>
                 <Route path="/about" component={About} />
                 <Route path="/home" component={Home} />
+                <Route path="/home" component={Demo} />
+                </Switch>
+           
               </div>
             </div>
           </div>
